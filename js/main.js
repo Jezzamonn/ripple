@@ -38,9 +38,9 @@ function render() {
 
 	// Set origin to middle and scale canvas
 	context.translate(canvas.width / 2, canvas.height / 2);
-	context.scale(scale);
+	context.scale(scale, scale);
 
-	controller.render(context);
+	controller.render(context, scale * canvas.width, scale * canvas.height);
 }
 
 function handleResize(evt) {
