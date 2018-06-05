@@ -34,11 +34,12 @@ export default class Controller {
 			let ix = x / DOT_GAP;
 			for (let y = startY; y <= height / 2 + DOT_GAP; y += DOT_GAP) {
 				let iy = y / DOT_GAP;
+				let ir = Math.sqrt(ix * ix + iy * iy);
 
-				let localT = this.t + (ix + iy) / 16;
+				let localT = this.t + (ir) / 16;
 
-				let waveX = 0.8 * DOT_GAP * Math.cos(2 * Math.PI * localT);
-				let waveY = 0.8 * DOT_GAP * Math.sin(2 * Math.PI * localT);
+				let waveX = DOT_GAP * Math.cos(2 * Math.PI * localT);
+				let waveY = DOT_GAP * Math.sin(2 * Math.PI * localT);
 
 				context.beginPath();
 				context.arc(x + waveX, y + waveY, 1, 0, 2 * Math.PI);
