@@ -38,8 +38,8 @@ export default class Controller {
 
 				let localT = this.t + (ir) / 16;
 
-				let waveX = DOT_GAP * Math.cos(2 * Math.PI * localT);
-				let waveY = DOT_GAP * Math.sin(2 * Math.PI * localT);
+				let waveX = 1.2 * DOT_GAP * Math.cos(2 * Math.PI * localT);
+				let waveY = 1.2 * DOT_GAP * Math.sin(2 * Math.PI * localT);
 
 				context.beginPath();
 				context.arc(x + waveX, y + waveY, 1, 0, 2 * Math.PI);
