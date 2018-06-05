@@ -37,10 +37,10 @@ export default class Controller {
 				let ir = Math.sqrt(ix * ix + iy * iy);
 				let angle = Math.atan2(iy, ix);
 
-				let localT = this.t + (ir) / 16;
+				let localT = this.t + angle / (2 * Math.PI);
 
-				let waveX = 1 * DOT_GAP * Math.cos(2 * Math.PI * localT + angle);
-				let waveY = 1 * DOT_GAP * Math.sin(2 * Math.PI * localT + angle);
+				let waveX = 1 * DOT_GAP * Math.cos(2 * Math.PI * localT);
+				let waveY = 1 * DOT_GAP * Math.sin(2 * Math.PI * localT);
 
 				context.beginPath();
 				context.arc(x + waveX, y + waveY, 1, 0, 2 * Math.PI);
