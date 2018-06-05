@@ -1,4 +1,4 @@
-const DOT_GAP = 10;
+const DOT_GAP = 5;
 
 export default class Controller {
 
@@ -31,9 +31,9 @@ export default class Controller {
 		}
 
 		for (let x = startX; x <= width / 2 + DOT_GAP; x += DOT_GAP) {
-			let ix = x / DOT_GAP;
+			let ix = 2 * x / DOT_GAP;
 			for (let y = startY; y <= height / 2 + DOT_GAP; y += DOT_GAP) {
-				let iy = y / DOT_GAP;
+				let iy = 2 * y / DOT_GAP;
 				let ir = Math.sqrt(ix * ix + iy * iy);
 				let angle = Math.atan2(iy, ix);
 
