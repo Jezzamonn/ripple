@@ -40,7 +40,7 @@ function render() {
 	context.translate(canvas.width / 2, canvas.height / 2);
 	context.scale(scale, scale);
 
-	controller.render(context, scale * canvas.width, scale * canvas.height);
+	controller.render(context, canvas.width / scale, canvas.height / scale);
 }
 
 function handleResize(evt) {
@@ -50,7 +50,7 @@ function handleResize(evt) {
 	// Math.max -> no borders (will cut off edges of the thing)
 	// Math.min -> show all (with borders)
 	// There are other options too :)
-	scale = Math.min(canvas.width, canvas.height) / SIZE;
+	scale = Math.sqrt(canvas.width * canvas.height / (SIZE * SIZE));
 
 	render();
 }
