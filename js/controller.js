@@ -21,11 +21,11 @@ export default class Controller {
 	 */
 	render(context, width, height) {
 		// TODO: Some rendering logic
-		let startX = 0;
+		let startX = 0.5 * DOT_GAP;
 		while (startX > -width / 2) {
 			startX -= DOT_GAP;
 		}
-		let startY = 0;
+		let startY = 0.5 * DOT_GAP;
 		while (startY >= -height / 2) {
 			startY -= DOT_GAP;
 		}
