@@ -35,7 +35,7 @@ export default class Controller {
 			for (let y = startY; y <= height / 2 + DOT_GAP; y += DOT_GAP) {
 				let iy = x / DOT_GAP;
 
-				let localT = this.t + (ix + iy) / 4;
+				let localT = this.t + (ix + iy) / 16;
 
 				let waveX = DOT_GAP * Math.cos(2 * Math.PI * localT);
 				let waveY = DOT_GAP * Math.sin(2 * Math.PI * localT);
