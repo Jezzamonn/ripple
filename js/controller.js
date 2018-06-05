@@ -37,7 +37,7 @@ export default class Controller {
 				let ir = Math.sqrt(ix * ix + iy * iy);
 				let angle = Math.atan2(iy, ix);
 
-				let localT = this.t + (ir / 8) + 2.5 * angle / (Math.PI);
+				let localT = this.t - (ir / 8) + 2.5 * angle / (Math.PI);
 
 				let waveX = 1 * DOT_GAP * Math.cos(2 * Math.PI * localT);
 				let waveY = 1 * DOT_GAP * Math.sin(2 * Math.PI * localT);
