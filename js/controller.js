@@ -39,13 +39,13 @@ export default class Controller {
 
 				let localT = this.t - (ir / 8)
 
-				let waveDist = 0.4 * DOT_GAP;
+				let waveDist = 0.9 * DOT_GAP;
 				let waveX = waveDist * Math.cos(2 * Math.PI * localT + angle);
 				let waveY = waveDist * Math.sin(2 * Math.PI * localT + angle);
 
 				context.beginPath();
-				context.strokeStyle = '#AAA'
-				context.lineWidth = 0.5;
+				context.strokeStyle = '#DDD'
+				context.lineWidth = 0.1;
 				context.arc(x, y, waveDist, 0, 2 * Math.PI);
 				context.stroke();
 
