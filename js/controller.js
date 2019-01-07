@@ -36,7 +36,7 @@ export default class Controller {
 				let ir = Math.sqrt(ix * ix + iy * iy);
 				let angle = Math.atan2(iy, ix);
 
-				let localT = this.animAmt - (ir / 8)
+				let localT = this.animAmt - (ir / 8);
 
 				let waveDist = 0.9 * DOT_GAP;
 				let waveX = waveDist * Math.cos(2 * Math.PI * localT + angle);
@@ -49,6 +49,7 @@ export default class Controller {
 				context.stroke();
 
 				context.beginPath();
+				context.fillStyle = 'black';
 				context.arc(x + waveX, y + waveY, 2, 0, 2 * Math.PI);
 				context.fill();
 			}

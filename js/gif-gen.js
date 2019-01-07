@@ -14,7 +14,7 @@ function renderFrame(context, controller, width, height) {
     // Set origin to middle.
     context.translate(width / 2, height / 2);
     
-    controller.render(context);
+    controller.render(context, width, height);
 }
 
 function averageImageDatas(imageDatas, outImageData) {
