@@ -3,14 +3,13 @@ const DOT_GAP = 15;
 export default class Controller {
 
 	constructor() {
-		this.t = 0;
+		this.animAmt = 0;
+		this.period = 2;
 	}
 
-	update() {
-		this.t += 0.01;
-		if (this.t > 1) {
-			this.t --;
-		}
+	update(dt) {
+		this.animAmt += dt / this.period;
+		this.animAmt %= 1;
 	}
 
 	/**
@@ -37,7 +36,7 @@ export default class Controller {
 				let ir = Math.sqrt(ix * ix + iy * iy);
 				let angle = Math.atan2(iy, ix);
 
-				let localT = this.t - (ir / 8)
+				let localT = this.animAmt - (ir / 8)
 
 				let waveDist = 0.9 * DOT_GAP;
 				let waveX = waveDist * Math.cos(2 * Math.PI * localT + angle);

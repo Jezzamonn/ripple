@@ -7,10 +7,11 @@ let context = canvas.getContext('2d');
 const SIZE = 500;
 
 let scale = 1;
-
+let lastTime;
 let controller;
 
 function init() {
+	lastTime = Date.now();
 	controller = new Controller();
 
 	handleResize();
@@ -28,7 +29,10 @@ function everyFrame() {
 }
 
 function update() {
-	controller.update();
+	let curTime = Date.now();
+	let dt = (curTime - lastTime) / 1000;
+	controller.update(dt);
+	lastTime = curTime;
 }
 
 function render() {
@@ -44,8 +48,14 @@ function render() {
 }
 
 function handleResize(evt) {
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
+	let pixelRatio = window.devicePixelRatio || 1;
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+	canvas.width = width * pixelRatio;
+	canvas.height = height * pixelRatio;
+	canvas.style.width = width + 'px';
+	canvas.style.height = height + 'px';
 
 	// Math.max -> no borders (will cut off edges of the thing)
 	// Math.min -> show all (with borders)
