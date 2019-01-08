@@ -19,7 +19,6 @@ export default class Controller {
 	 * @param {number} height 
 	 */
 	render(context, width, height) {
-		// TODO: Some rendering logic
 		let startX = 0.5 * DOT_GAP;
 		while (startX > -width / 2) {
 			startX -= DOT_GAP;
